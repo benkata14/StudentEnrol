@@ -9,7 +9,11 @@ Boolean isFundingAvailble
 String studentEmail
 String studentUsername
 String studentPassword
-String course
+Course course
+
+String toString(){
+return studentName
+}
 
     static constraints = {
 studentName nullable: false, blank: false

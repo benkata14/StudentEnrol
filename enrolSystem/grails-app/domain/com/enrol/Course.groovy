@@ -4,23 +4,28 @@ class Course {
 
 String department
 String courseTitle
-String courseLeader
+Lecturer courseLeader
 String courseCode
 Date startDate
 Date endDate
 String description
-Integer numberOfStudents
+int numberOfStudents
 Double tuitionFees
+static hasMany=[lecturers:Lecturer,students:Student, modules:Module]
+
+String toString(){
+return courseTitle
+}
 
     static constraints = {
 courseTitle nullable: false, blank: false
 department nullable: false, blank: false
 courseLeader nullable: false, blank: false
 courseCode nullable: false, blank: false
-numberOfStudents nullable: false, blank: false, minSize: 20, maxSize: 60
+numberOfStudents nullable: false, blank: false, min: 20, max: 60
 startDate nullable: false, blank: false
 endDate nullable: false, blank: false
-description widget:'textarea',nullable: false, blank: false, maxSize: 5000
+description widget:'textarea',nullable: false, blank: false, maxsize: 5000
 tuitionFees nullable: false, blank: false, scale: 2
     }
 }
